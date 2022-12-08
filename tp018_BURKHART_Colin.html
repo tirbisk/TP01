@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="tp01.css">
+        <title>Client Form</title>
+        <script type="text/javascript">
+            let value = {}
+            let error = ""
+
+            var changeValue = (id) => {
+                value[id] = document.getElementById(id).value;
+            }
+
+            var displayValue = () => {
+                if (value["password"] === undefined) {
+                    error = "no value in passwword please enter one"
+                } else {
+                    for (const [key, value] of Object.entries(value)){
+                        // check all data you want here test
+                        error = "no error"
+                    }
+                }
+                document.getElementById("check_value").innerHTML = error;
+            }
+            </script>
+    </head>
+    <body>
+        <h1>Client Form</h1>
+        <div class="field">
+            name
+            <input id="name" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            surname
+            <input id="surname" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            adress
+            <input id="adress" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            postal code
+            <input id="postal" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            telephone number
+            <input id="telephone" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            email
+            <input id="email" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            civility
+            <input id="civility" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            pseudo
+            <input id="pseudo" type="text" onchange="changeValue(id)">
+        </div>
+        <div class="field">
+            password
+            <input id="password" type="text" onchange="changeValue(id)">
+        </div>
+        <button type="button" onclick="displayValue()">
+            Submit
+        </button>
+        <p id="check_value" style="color:red">
+    </body>
+</html>
